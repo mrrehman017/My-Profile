@@ -1,0 +1,2120 @@
+.light-theme {
+    --btn-bg-clr: #8ae1b1;
+    --btn-text-clr: #2bae66;
+    --heading-clr: #171923;
+    --form-bg-clr: #171923;
+    --text-clr: #1a202c;
+    --text-clr-repo: #1a202c;
+    --fotr-bg-clr: #f7fafc;
+    --bg-clr: #ffffff;
+    --card-bg-clr: #ffffff;
+    --header-bg-clr: #ffffffcc;
+    --line-clr: #edf2f7;
+    --border-clr: #e2e8f0;
+    --repo-box-bg: #ffffff;
+    --repo-span-box: #c4f0d8;
+    --repo-span-text: #1d7444;
+    --menu-bg-clr: #ffffffe6;
+}
+
+.dark-theme {
+    --form-bg-clr: #2d3748;
+    --bg-clr: #1a212acc;
+    --card-bg-clr: #171923;
+    --header-bg-clr: #1a212acc;
+    --btn-bg-clr: #8ae1b1;
+    --btn-text-clr: #2bae66;
+    --heading-clr: #FFFFFF;
+    --text-clr: #FFFFFF;
+    --text-clr-repo: #A0AEC0;
+    --fotr-bg-clr: #171923;
+    --line-clr: #ffffff0f;
+    --border-clr: #2d3748;
+    --repo-box-bg: #171923;
+    --repo-span-box: #a7e9c529;
+    --repo-span-text: #a7e9c5;
+    --menu-bg-clr: #1a202ce6;
+}
+
+body {
+    font-family: "Ubuntu";
+    font-weight: 700;
+    height: 100vh;
+    background-color: #1a202c;
+}
+
+/* ///////////////////////// HOME PAGE CSS START ///////////////////////////// */
+
+/* ================================ HEADER CSS START =============================== */
+
+
+header {
+    z-index: 9999990;
+    background: var(--header-bg-clr);
+    backdrop-filter: saturate(180%) blur(5px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+header .navbar {
+    padding: 12px 0px;
+}
+
+.nav-logo-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-logo>a {
+    color: var(--heading-clr);
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+}
+
+.nav-logo>a:hover {
+    color: var(--heading-clr);
+    text-decoration: none;
+}
+
+.nav-logo>a:hover .css-1kvazvd {
+    bottom: -10px;
+    transition: all 0.2s ease 0s;
+}
+
+.css-1kvazvd {
+    position: absolute;
+    height: 27px;
+    bottom: 0px;
+    left: -18px;
+    transition: all 0.2s ease 0s;
+    fill: none;
+    stroke: #2bae66;
+}
+
+.animated-underline {
+    stroke-dasharray: 850;
+    stroke-dashoffset: 850;
+    animation: animatedUnderline 1.4s cubic-bezier(.51, 0, .71, .98) forwards;
+}
+
+@-webkit-keyframes animatedUnderline {
+    0% {
+        stroke-dashoffset: 850
+    }
+
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+@keyframes animatedUnderline {
+    0% {
+        stroke-dashoffset: 850
+    }
+
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu .nav-link {
+    color: var(--text-clr);
+    font-size: 18px;
+    font-weight: 750;
+    margin-right: 32px;
+    line-height: 20px;
+    position: relative;
+}
+
+.nav-menu .nav-link::after {
+    transition: all 0.25s ease-in-out;
+    content: '';
+    outline: 1px solid transparent;
+    width: 0%;
+    height: 35%;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    background: rgba(50, 204, 119, 0.46);
+    z-index: -1;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.dark-mod-btn {
+    padding: 5px 10px;
+}
+
+.dark-mod-btn>svg {
+    font-size: 30px;
+    font-weight: 600;
+    stroke-width: 1;
+    color: #171923;
+}
+
+.light-mod-btn {
+    padding: 5px 10px;
+}
+
+.light-mod-btn>svg {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* -------------------------- MOBILE MENU START --------------------------- */
+.nav-menu-mob {
+    display: none;
+    align-items: center;
+}
+
+.menubarBtn {
+    padding: 5px 10px;
+}
+
+.menubarBtn>svg {
+    color: var(--text-clr);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.mob-side-bar {
+    display: none;
+}
+
+.MenuActive {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: var(--menu-bg-clr);
+    display: block;
+}
+
+.mob-side-bar ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mob-side-bar li {
+    list-style: none;
+}
+
+.mob-side-bar .nav-link {
+    color: var(--text-clr);
+    font-size: 18px;
+    font-weight: 750;
+    line-height: 46px;
+    position: relative;
+}
+
+.mob-side-bar .nav-link::after {
+    transition: all 0.25s ease-in-out;
+    content: '';
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    bottom: 8px;
+    left: 0px;
+    background: #2bae66;
+}
+
+.mob-side-bar .nav-link:hover::after {
+    width: 100%;
+}
+
+.closeBtn {
+    padding: 5px 10px;
+}
+
+.closeBtn>svg {
+    color: var(--text-clr);
+    font-size: 30px;
+    font-weight: 600;
+    right: auto;
+}
+
+.menulistclosebtn {
+    margin-left: auto;
+    margin-top: 12px;
+    margin-bottom: 35px;
+    width: fit-content;
+}
+
+/* -------------------------- MOBILE MENU END --------------------------- */
+
+/* ================================ HEADER CSS End =============================== */
+
+/* ============================= INTRO SECTION START =========================== */
+
+
+#home-page-bg {
+    background-color: var(--bg-clr);
+    padding: 100px 0px;
+}
+
+.intro-main {
+    padding: 64px 64px 0px 64px;
+}
+
+.intro-body {
+    padding: 64px 106px;
+    display: flex;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+}
+
+.profile-img>img {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+}
+
+.profile-details {
+    padding-left: 40px;
+}
+
+.profile-details>h2 {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.33;
+    background-image: linear-gradient(to right, #2bae66, #2c7a7b, #2b6cb0);
+    background-clip: text;
+    color: transparent;
+    font-family: Ubuntu;
+}
+
+.profile-details>h2 {
+    background-size: 300%;
+}
+
+.profile-details>p {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    font-weight: 400;
+    margin-bottom: 0px;
+    color: var(--text-clr);
+}
+
+.FE-dev {
+    background-image: linear-gradient(to right, #2bae66, #2c7a7b, #2b6cb0);
+    background-clip: text;
+    color: transparent;
+}
+
+.Lnges {
+    color: #2bae66;
+}
+
+.intro-details-main {
+    padding: 70px 64px 64px 64px;
+}
+
+.intro-details-body {
+    display: flex;
+    flex-direction: column;
+    height: 420px;
+}
+
+.intro-details-topBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background: #00000026;
+}
+
+.topBar-point {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1.25rem;
+}
+
+.red-point {
+    height: 12px;
+    width: 12px;
+    border-radius: 999px;
+    background-color: #f56565;
+}
+
+.orange-point {
+    height: 12px;
+    width: 12px;
+    border-radius: 999px;
+    background-color: #ed8936;
+    margin-left: 10px;
+}
+
+.green-point {
+    height: 12px;
+    width: 12px;
+    border-radius: 999px;
+    background-color: #2bae66;
+    margin-left: 10px;
+}
+
+.topBar-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.topBar-text>p {
+    margin-bottom: 0px;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--text-clr);
+}
+
+.intro-details-content {
+    height: 100%;
+    display: flex;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow: hidden;
+    background: #00000010;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.intro-block {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    visibility: visible;
+}
+
+.intro-block-text {
+    display: flex;
+    font-size: 1.125rem;
+    align-items: center;
+    font-weight: 400;
+    color: var(--text-clr);
+}
+
+.intro-block-text>svg {
+    margin-right: 10px;
+}
+
+.intro-block>p {
+    font-size: 1.125rem;
+    color: #718096;
+    font-weight: 400;
+    margin: 5px 0px 0px 0px;
+}
+
+/* ============================= INTRO SECTION END =========================== */
+
+
+/* ================================ Footer CSS Start =============================== */
+
+footer {
+    background-color: var(--fotr-bg-clr);
+    padding: 16px 0px;
+    position: absolute;
+    width: 100%;
+    margin-top: -1px;
+}
+
+.copyright-text>p {
+    text-align: center;
+    margin-bottom: 0px;
+    color: var(--text-clr);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.skills-text>p {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0px;
+    color: var(--text-clr);
+}
+
+.skills-text p>span {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 5px;
+}
+
+.skills-text a>svg {
+    font-size: 25px;
+    color: var(--text-clr) !important;
+}
+
+.footer-social-icon {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+}
+
+.footer-social-icon>a {
+    background-color: var(--line-clr);
+    padding: 2px 7px 5px 7px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.footer-social-icon a>svg {
+    color: var(--text-clr);
+    font-size: 18px;
+}
+
+/* ================================ Footer CSS End =============================== */
+
+
+/* ///////////////////////// HOME PAGE CSS END ///////////////////////////// */
+
+
+
+/* ///////////////////////// PROJECT PAGE CSS START ///////////////////////////// */
+
+
+
+/* ============================ MY_PROJECTS SECTION START ======================= */
+
+#projectbg {
+    background-color: var(--bg-clr);
+    padding: 70px 0px;
+}
+
+#my-projects {
+    margin-top: 112px;
+}
+
+.my-project-heading {
+    text-align: center;
+}
+
+.my-project-heading>h1 {
+    font-family: Ubuntu;
+    font-size: 3.15rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--heading-clr);
+    width: fit-content;
+    margin: 0px auto;
+    z-index: 1;
+    position: relative;
+}
+
+.my-project-heading>h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    z-index: -1;
+    background: rgba(50, 204, 119, 0.46);
+    display: block;
+    z-index: -1;
+    opacity: 50%;
+}
+
+.my-project-heading>p {
+    margin: 12px 0px 0px 0px;
+    font-weight: 400;
+    color: var(--text-clr);
+}
+
+.all-projects {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.project-img {
+    margin: 64px 0px 64px auto;
+    width: 90%;
+}
+
+.project-img-right {
+    margin: 64px auto 64px 0px;
+    width: 90%;
+}
+
+.project-img>img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid #4a5568;
+    border-radius: 1rem;
+}
+
+.project-img-right>img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid #4a5568;
+    border-radius: 1rem;
+}
+
+/* ========================== project for mob ======================== */
+
+
+.all-projects-mob {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 10px 10px -5px rgb(0 0 0 / 4%);
+    border: 1px solid #4a5568;
+    border-radius: 1rem;
+    display: none;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.project-img-mob {
+    width: 100%;
+    margin: 0px;
+}
+
+.project-img-mob>img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+.project-card-mob {
+    padding: 20px;
+    border-radius: 1rem;
+    background-color: var(--card-bg-clr);
+    width: 100%;
+    border: 1px solid var(--border-clr);
+    border-image: initial;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.project-card-content-mob {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.project-card-header-mob {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card-header-heading-mob {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card-header-heading-mob>h1 {
+    font-size: 2.15rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--heading-clr);
+    margin-bottom: 0px;
+}
+
+.code-access-mob>a {
+    text-decoration: none;
+}
+
+.code-access-mob>a:hover {
+    color: #8ae1b1;
+}
+
+.code-access-mob>a svg {
+    color: #8ae1b1;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.card-header-skill-mob {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.card-header-skill-mob>span {
+    background-color: #81e6d929;
+    color: #81e6d9;
+    padding: 3px 5px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-right: 10px;
+}
+
+.card-header-skill-mob>span svg {
+    margin-right: 5px;
+}
+
+.skillTwo-mob {
+    background-color: #d6bcfa29 !important;
+    color: #d6bcfa !important;
+}
+
+.project-card-content-mob>p {
+    color: var(--text-clr);
+    font-weight: 300;
+}
+
+
+
+/*  ========================== project for mob ========================  */
+
+.project-card {
+    padding: 20px;
+    position: absolute;
+    left: -95px;
+    top: 50%;
+    border-radius: 1rem;
+    transform: translate(0px, -50%);
+    background-color: var(--card-bg-clr);
+    width: 45%;
+    max-width: 600px;
+    white-space: normal;
+    min-height: 35%;
+    border: 1px solid var(--border-clr);
+    border-image: initial;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.project-card-right {
+    padding: 20px;
+    position: absolute;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    right: -105px;
+    top: 50%;
+    border-radius: 1rem;
+    transform: translate(0px, -50%);
+    background-color: var(--card-bg-clr);
+    width: 45%;
+    max-width: 600px;
+    white-space: normal;
+    min-height: 35%;
+    border: 1px solid var(--border-clr);
+    border-image: initial;
+}
+
+.project-card-content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.project-card-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card-header-heading {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card-header-heading>h1 {
+    font-size: 2.15rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--heading-clr);
+    margin-bottom: 0px;
+}
+
+.code-access>a {
+    text-decoration: none;
+}
+
+.code-access>a:hover {
+    color: #8ae1b1;
+}
+
+.code-access>a svg {
+    color: #8ae1b1;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.card-header-skill {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.card-header-skill>span {
+    background-color: #81e6d929;
+    color: #81e6d9;
+    padding: 3px 5px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-right: 10px;
+}
+
+.card-header-skill>span svg {
+    margin-right: 5px;
+}
+
+.skillTwo {
+    background-color: #d6bcfa29 !important;
+    color: #d6bcfa !important;
+}
+
+.project-card-content>p {
+    color: var(--text-clr);
+    font-weight: 300;
+}
+
+
+
+
+/* ============================ MY_PROJECTS SECTION END ======================= */
+
+
+
+
+/* ============================ REPO SECTION START ======================= */
+
+#repo-section {
+    margin: 64px 0px;
+}
+
+.repo-main {
+    text-align: center;
+}
+
+.repo-main>h1 {
+    font-family: Ubuntu;
+    font-size: 3.15rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--heading-clr);
+    width: fit-content;
+    margin: 0px auto;
+    z-index: 1;
+    position: relative;
+}
+
+.repo-main>h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    z-index: -1;
+    background-color: var(--btn-bg-clr);
+    display: block;
+    z-index: -1;
+    opacity: 50%;
+}
+
+.repo-main>p {
+    margin: 12px 0px 0px 0px;
+    font-weight: 400;
+    color: var(--text-clr);
+}
+
+.repo-main>a {
+    margin: 20px auto 0px auto;
+    padding: 15px 25px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    border-radius: 0.375rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--btn-text-clr);
+    width: fit-content;
+}
+
+.repo-main>a:hover {
+    background-color: #e1f7eb;
+}
+
+.repo-main>a svg {
+    margin-right: 10px;
+}
+
+.project-boxs {
+    margin: 40px auto 0px auto;
+    display: grid;
+    grid-row-gap: 2rem;
+    grid-column-gap: 2.5rem;
+    /* grid-auto-rows: 1fr; */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 89%;
+    padding-bottom: 80px;
+}
+
+.project-boxs a {
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    text-overflow: ellipsis;
+    padding: 0px;
+}
+
+.projects-box {
+    border: 1px solid var(--border-clr);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 12px 12px 12px 20px;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--repo-box-bg);
+    border-radius: 0.5rem;
+    transition: all 0.25s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.projects-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.nameSkills {
+    display: flex;
+    align-items: center;
+}
+
+.nameSkills>h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--heading-clr);
+    margin-bottom: 0px;
+}
+
+.nameSkills>span {
+    padding: 5px 8px;
+    margin: 0px 0px 0px 8px;
+    background-color: var(--repo-span-box);
+    color: var(--repo-span-text);
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    border-radius: 0.375rem;
+}
+
+.projects-describtion>p {
+    margin: 10px 0px 0px 0px;
+    color: var(--text-clr-repo);
+    font-weight: 300;
+}
+
+/* ============================ REPO SECTION END ======================= */
+
+
+
+
+/* ///////////////////////// PROJECT PAGE CSS END ///////////////////////////// */
+
+
+/* ///////////////////////// RESUME PAGE CSS START ///////////////////////////// */
+
+
+/* =============================== RESUME PAGE EDU AND EXP SECTION CSS Start ========================== */
+
+#resumeSkills {
+    padding-top: 100px;
+}
+
+#resumebg {
+    background-color: var(--bg-clr);
+    padding: 120px 0px 30px 0px;
+}
+
+#resume-page {
+    padding: 50px 0px 0px 0px;
+}
+
+.resume-page-heading {
+    text-align: center;
+}
+
+.resume-page-heading>h1 {
+    font-family: Ubuntu;
+    font-size: 3.75rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--heading-clr);
+    width: fit-content;
+    margin: 0px auto;
+    z-index: 1;
+    position: relative;
+}
+
+.resume-page-heading>h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    z-index: -1;
+    background: rgba(50, 204, 119, 0.46);
+    display: block;
+    z-index: -1;
+    opacity: 50%;
+}
+
+.resume-page-heading>p {
+    margin: 12px 0px 0px 0px;
+    font-weight: 400;
+    color: var(--text-clr);
+}
+
+.edu--exp--part {
+    width: 85%;
+    margin: 64px auto 32px auto;
+}
+
+.edu-exp-heading {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1;
+    z-index: 15;
+    position: relative;
+    display: inline-block;
+    color: var(--heading-clr);
+}
+
+.edu-exp-heading::before {
+    content: '';
+    bottom: 0;
+    left: 0px;
+    height: 40%;
+    width: 100%;
+    background: rgba(50, 204, 119, 0.46);
+    opacity: 50%;
+    z-index: -8;
+    position: absolute;
+}
+
+.edu-exp-list {
+    list-style-type: none;
+    position: relative;
+    padding: 0px;
+}
+
+.edu-exp-list li {
+    z-index: 1;
+    padding-top: var(--chakra-space-4);
+    position: relative;
+    padding: 16px 0px 0px 0px;
+}
+
+.css-1y6skxv {
+    display: flex;
+    left: 5px;
+    top: 1.25rem;
+    width: 2.5px;
+    bottom: 0px;
+    height: unset;
+    z-index: -1;
+    position: absolute;
+    background-color: #edf2f7;
+}
+
+.css-189pvwx {
+    display: flex;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+}
+
+.css-1j8aj7 {
+    min-width: 14px;
+    height: 14px;
+    margin-top: 0.25rem;
+    border-radius: 9999px;
+    background-image: linear-gradient(to right, #2bae66, #1d7444);
+}
+
+.css-189pvwx> :not(style)~ :not(style) {
+    margin-top: 0px;
+    margin-inline: 0.5rem 0px;
+    margin-bottom: 0px;
+}
+
+.css-mf8mud {
+    display: flex;
+    -webkit-box-align: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+}
+
+.css-1acgxpm {
+    font-family: Ubuntu;
+    font-weight: var(--chakra-fontWeights-bold);
+    font-size: var(--chakra-fontSizes-md);
+    line-height: 1.2;
+    width: var(--chakra-sizes-full);
+    text-align: left;
+    color: var(--text-clr);
+}
+
+.css-mf8mud> :not(style)~ :not(style) {
+    margin-top: var(--chakra-space-2);
+    margin-inline: 0px;
+    margin-bottom: 0px;
+}
+
+.css-1ex7eg8 {
+    width: var(--chakra-sizes-full);
+    text-align: left;
+    color: var(--text-clr);
+}
+
+.css-17dkj3 {
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: 300;
+    width: var(--chakra-sizes-full);
+    text-align: left;
+}
+
+.css-lizu7e {
+    font-family: Ubuntu;
+    width: var(--chakra-sizes-full);
+    text-align: left;
+    font-weight: 400;
+}
+
+.css-xar3qk {
+    display: flex;
+    left: 5px;
+    top: var(--chakra-space-5);
+    width: 2.5px;
+    height: 70px;
+    z-index: -1;
+    position: absolute;
+    background-color: var(--chakra-colors-gray-100);
+}
+
+.edu-exp-line-two {
+    display: flex;
+    left: 5px;
+    top: 0px;
+    width: 2.5px;
+    bottom: 0px;
+    height: 105px;
+    z-index: -1;
+    position: absolute;
+    background-color: #edf2f7;
+}
+
+/* =============================== RESUME PAGE EDU AND EXP SECTION CSS END ========================== */
+/* =========================== RESUME PAGE SKILLS SECTION START =-======================= */
+.resume-page-skills-heading {
+    text-align: center;
+}
+
+.resume-page-skills-heading>h1 {
+    font-family: Ubuntu;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--heading-clr);
+    width: fit-content;
+    margin: 16px auto;
+    z-index: 1;
+    position: relative;
+}
+
+.resume-page-skills-heading>h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    z-index: -1;
+    background-color: var(--btn-bg-clr);
+    display: block;
+    z-index: -1;
+    opacity: 50%;
+}
+
+.skill-width {
+    width: 75%;
+    margin: 30px auto;
+
+}
+
+.skills-language-logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills-language-logo>img {
+    width: 50%;
+}
+
+
+.resume-download-btn {
+    width: fit-content;
+    margin: 20px auto 120px auto;
+    display: flex;
+    justify-content: center;
+    background-color: var(--btn-text-clr);
+    color: #fff;
+    align-items: center;
+    padding: 15px 24px;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.resume-download-btn:hover {
+    color: #fff;
+    background-color: #1d7444;
+}
+
+.resume-download-btn>svg {
+    margin-left: 5px;
+}
+
+
+/* =========================== RESUME PAGE SKILLS SECTION ENG =-======================= */
+
+/* ///////////////////////// RESUME PAGE CSS END ///////////////////////////// */
+
+
+
+
+/* ///////////////////////// CONTACT PAGE CSS START ///////////////////////////// */
+
+
+#contactPage {
+    padding: 150px 0px 100px 0px;
+    z-index: -1;
+    background-color: var(--bg-clr);
+}
+
+.contactUspage-heading {
+    text-align: center;
+}
+
+.contactUspage-heading>h1 {
+    font-family: Ubuntu;
+    font-size: 3.75rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--heading-clr);
+    width: fit-content;
+    margin: 0px auto;
+    z-index: 1;
+    position: relative;
+}
+
+.contactUspage-heading>h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    z-index: -1;
+    background: rgba(50, 204, 119, 0.46);
+    display: block;
+    z-index: -1;
+    opacity: 50%;
+}
+
+.contactUspage-heading>p {
+    margin: 12px 0px 0px 0px;
+    font-weight: 400;
+    color: var(--text-clr);
+}
+
+.ContactInfoMain {
+    margin: 60px auto 150px auto;
+    padding: 64px;
+    background-color: var(--form-bg-clr);
+    width: 65%;
+    border-radius: 10px;
+}
+
+.contact-Info-heading>h1 {
+    color: #ffffff;
+    font-size: 2.35rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.contact-Info-heading>p {
+    margin: 12px 0px 0px 0px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.contact-Info-num-email {
+    padding: 40px 0px;
+}
+
+.num-email-location {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.num-email-location>a {
+    cursor: pointer;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    height: 48px;
+    font-size: 18px;
+    padding: 0px 16px;
+    font-weight: 400;
+}
+
+.num-email-location>a:hover {
+    color: #2bae66;
+}
+
+.num-email-location>a svg {
+    margin-right: 8px;
+}
+
+.contact-Info-socailLink {
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact-Info-socailLink>a {
+    width: 100%;
+    display: flex;
+    line-height: 1.2;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 30px;
+    color: #ffffff;
+    width: fit-content;
+    padding: 10px;
+    background: transparent;
+}
+
+.contact-Info-socailLink>a:hover {
+    background-color: #2bae66;
+}
+
+.contactFormMain {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 28px;
+    width: 100%;
+}
+
+.contactFormMain>form {
+    width: 100%;
+}
+
+.contactFormMain>form label {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0px 0px 5px 0px;
+}
+
+.input-icon-main {
+    width: 100%;
+    display: flex;
+    border: 1px solid #e0e1e7;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+}
+
+.input-icon>svg {
+    font-size: 25px;
+    color: #171923;
+    padding: 0px 5px;
+    line-height: 1.2;
+}
+
+.input-icon-main {
+    margin-bottom: 10px;
+}
+
+.input-icon-main>input {
+    border: none;
+    outline: none;
+    padding: 0px 0px 0px 10px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.input-icon-main input:focus {
+    border: none;
+    outline: 0;
+}
+
+.input-icon-main>input::placeholder {
+    font-size: 11px;
+}
+
+.input-icon-main:focus-within {
+    border: 1px solid #3182ce !important;
+    box-shadow: 0 0 0 1px #3182ce !important;
+}
+
+.contactFormMain textarea {
+    border: 1px solid #e0e1e7;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.contactFormMain textarea:focus {
+    border: none;
+    outline: 0;
+    box-shadow: 0;
+}
+
+.contactFormMain textarea:focus {
+    border: 1px solid #3182ce !important;
+    box-shadow: 0 0 0 1px #3182ce !important;
+}
+
+.contactFormPageBtn {
+    background-color: #2bae66;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 8px 15px;
+    display: flex;
+    margin-left: auto;
+    margin: 15px 0px 0px 0px;
+}
+
+.contactFormPageBtn:hover {
+    background-color: #1d7444;
+}
+
+
+
+/* ///////////////////////// CONTACT PAGE CSS END ///////////////////////////// */
+
+
+
+/* ///////////////////////// RESPONSIVENESS START ////////////////////// */
+
+
+@media(max-width : 1440px) {
+
+    /* ----------------------- CONTACT PAGE START -------------------------- */
+    #contactPage {
+        padding-bottom: 20px;
+    }
+
+    /* ----------------------- CONTACT PAGE END -------------------------- */
+}
+
+@media(max-width : 1399px) {
+
+    /* ----------------------- HOME PAGE START -------------------------- */
+    .intro-main {
+        padding-top: 0px;
+    }
+
+    .profile-details>h2 {
+        font-size: 2rem;
+    }
+
+    .profile-details>p {
+        font-size: 1rem;
+    }
+
+    .intro-details-main {
+        padding-top: 20px;
+    }
+
+    .intro-block-text {
+        display: flex;
+        font-size: 1rem;
+    }
+
+    .intro-block>p {
+        font-size: 1rem;
+    }
+
+    #home-page-bg {
+        padding-bottom: 50px;
+    }
+
+    /* ----------------------- HOME PAGE END -------------------------- */
+
+
+    /* ----------------------- PROJeCT PAGE START -------------------------- */
+
+    #my-projects {
+        margin-top: 70px;
+    }
+
+    .my-project-heading>h1 {
+        font-size: 2.75rem;
+    }
+
+    .card-header-heading>h1 {
+        font-size: 1.15rem;
+    }
+
+    .card-header-skill {
+        margin-bottom: 10px;
+    }
+
+    .project-card-content>p {
+        margin-bottom: 0px;
+    }
+
+    .repo-main>h1 {
+        font-size: 2.75rem;
+    }
+
+    .projects-describtion>p {
+        font-size: 14px;
+    }
+
+    #repo-section {
+        margin-bottom: 0px;
+    }
+
+
+    /* ----------------------- PROJeCT PAGE END -------------------------- */
+
+
+
+    /* ----------------------- RESUME PAGE START -------------------------- */
+
+    #resume-page {
+        padding-top: 10px;
+    }
+
+    .resume-page-heading>h1 {
+        font-size: 2.75rem;
+    }
+
+    #resumeSkills {
+        padding-top: 25px;
+    }
+
+    .edu-exp-heading {
+        font-size: 1.2rem;
+    }
+
+    .css-1acgxpm {
+        font-size: 14px;
+    }
+
+    .css-lizu7e {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .edu-exp-line-two {
+        height: 80px;
+    }
+
+    .resume-download-btn {
+        font-size: 1rem;
+        margin: 20px auto 70px auto;
+    }
+
+    /* ----------------------- RESUME PAGE END -------------------------- */
+
+
+
+    /* ----------------------- CONTACT PAGE START -------------------------- */
+    #contactPage {
+        padding: 130px 0px 100px 0px;
+    }
+
+    .contactUspage-heading>h1 {
+        font-size: 2.75rem;
+    }
+
+    .contact-Info-heading>h1 {
+        font-size: 1.35rem;
+    }
+
+    .contact-Info-heading>p {
+        font-size: 14px;
+    }
+
+    .num-email-location>a {
+        font-size: 14px;
+    }
+
+    .contact-Info-socailLink>a {
+        font-size: 23px;
+    }
+
+    .ContactInfoMain {
+        padding: 44px;
+        margin: 60px auto 70px auto;
+    }
+
+    .contactFormMain {
+        padding: 25px;
+    }
+
+    .contactFormMain>form label {
+        font-size: 14px;
+    }
+
+    .contactFormPageBtn {
+        font-size: 14px;
+    }
+
+    /* ----------------------- CONTACT PAGE END -------------------------- */
+}
+
+@media(max-width : 1199px) {
+
+    /* ----------------------- HeADER and FOOTER PAGE START ---------------------- */
+    .nav-menu .nav-link {
+        font-size: 16px;
+    }
+
+    .dark-mod-btn>svg {
+        font-size: 25px;
+    }
+
+    /* ----------------------------- FOOTER -------------------------- */
+    footer {
+        padding: 10px 0px;
+    }
+
+    .copyright-text>p {
+        font-size: 14px;
+    }
+
+    .skills-text>p {
+        font-size: 14px;
+    }
+
+    .skills-text a>svg {
+        font-size: 20px;
+    }
+
+    .skills-text p>span {
+        font-size: 14px;
+    }
+
+    .footer-social-icon a>svg {
+        font-size: 16px;
+    }
+
+    /* ----------------------- HeADER and FOOTER PAGE END ---------------------- */
+    /* ----------------------- HOME PAGE START ---------------------- */
+
+    .intro-body {
+
+        padding: 64px 10px;
+
+    }
+
+    .topBar-text>p {
+        font-size: 14px;
+    }
+
+    .intro-block-text {
+        font-size: 0.9rem;
+    }
+
+    .intro-block>p {
+        font-size: 0.9rem;
+    }
+
+    .intro-block {
+        margin-bottom: 10px;
+    }
+
+    /* ----------------------- HOME PAGE END ---------------------- */
+
+
+    /* ----------------------- PROJECT PAGE START ---------------------- */
+
+    .my-project-heading>h1 {
+        font-size: 2.25rem;
+    }
+
+    .my-project-heading>h1::before {
+
+        height: 15px;
+    }
+
+    .my-project-heading>p {
+        font-size: 14px;
+    }
+
+    .project-card {
+        padding: 15px;
+        border-radius: 0.5rem;
+    }
+
+    .card-header-heading>h1 {
+        font-size: 1rem;
+    }
+
+    .code-access>a svg {
+        color: #8ae1b1;
+        font-size: 18px;
+    }
+
+    .card-header-skill>span {
+        font-size: 13px;
+    }
+
+    .project-card-content>p {
+        font-size: 14px;
+    }
+
+    .project-card-right {
+        padding: 15px;
+        border-radius: 0.5rem;
+    }
+
+    .repo-main>h1 {
+        font-size: 2.25rem;
+    }
+
+    .repo-main>h1::before {
+        height: 15px;
+    }
+
+    .repo-main>p {
+        font-size: 14px;
+    }
+
+    .nameSkills>h3 {
+        font-size: 1rem;
+    }
+
+    .nameSkills>span {
+        font-size: 0.55rem;
+    }
+
+    .projects-describtion>p {
+        font-size: 11px;
+    }
+
+    /* ----------------------- PROJECT PAGE END ---------------------- */
+
+
+    /* ----------------------- RESUME PAGE START ---------------------- */
+    .resume-page-heading>h1 {
+        font-size: 2.25rem;
+    }
+
+    .resume-page-heading>p {
+        font-size: 14px;
+    }
+
+    .resume-page-heading>h1::before {
+        height: 15px;
+    }
+
+    /* ----------------------- RESUME PAGE END ---------------------- */
+
+
+    /* ----------------------- CONTACT PAGE START ---------------------- */
+
+    .contactUspage-heading>h1 {
+        font-size: 2.25rem;
+    }
+
+    .contactUspage-heading>h1::before {
+        height: 15px;
+    }
+
+    .contactUspage-heading>p {
+        font-size: 14px;
+    }
+
+    .ContactInfoMain {
+        width: 85%;
+    }
+
+    .contact-Info-socailLink {
+        width: 70%;
+    }
+
+
+    /* ----------------------- CONTACT PAGE END ---------------------- */
+}
+
+@media(max-width : 991px) {
+
+    /* ---------------------------- HOME PAGE START --------------------- */
+    .intro-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-img {
+        margin-bottom: 30px;
+    }
+
+    .profile-details {
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .intro-details-main {
+        padding: 70px 24px 64px 24px;
+    }
+
+    /* ---------------------------- HOME PAGE END --------------------- */
+
+
+    /* ---------------------------- PROJECT PAGE START --------------------- */
+    .all-projects {
+        display: none;
+    }
+
+    .all-projects-mob {
+        display: flex;
+    }
+
+    .my-project-heading {
+        margin-bottom: 30px;
+    }
+
+    .card-header-heading-mob>h1 {
+        font-size: 1rem;
+    }
+
+    .code-access-mob>a svg {
+        font-size: 20px;
+    }
+
+    .card-header-skill-mob {
+        margin-bottom: 10px;
+    }
+
+    .card-header-skill-mob>span {
+        font-size: 12px;
+    }
+
+    .project-card-content-mob>p {
+        margin: 0px auto;
+        font-size: 13px;
+    }
+
+    .project-boxs {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    /* ---------------------------- PROJECT PAGE END --------------------- */
+
+
+
+    /* ---------------------------- CONTACT PAGE START --------------------- */
+    .ContactInfoMain {
+        width: 100%;
+    }
+
+    /* ---------------------------- CONTACT PAGE END --------------------- */
+}
+
+@media(max-width: 767px) {
+    /* -------------------------- HEADER AND FOOTER PAGE START -------------------- */
+
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu-mob {
+        display: flex;
+    }
+
+    .copyright-text>p {
+        margin: 10px 0px;
+    }
+
+    .skills-text>p {
+        margin-bottom: 20px;
+    }
+
+    .footer-social-icon {
+        width: 40%;
+        margin: 0px auto;
+    }
+
+    /* -------------------------- HEADER AND FOOTER PAGE END -------------------- */
+    /* -------------------------- HOME PAGE START -------------------- */
+    .intro-main {
+        padding: 0px;
+    }
+
+    .intro-body {
+        padding: 40px 10px 40px;
+    }
+
+    .intro-details-main {
+        padding: 65px 0px;
+    }
+
+    .content-container {
+        width: 100%;
+    }
+
+    /* -------------------------- HOME PAGE END -------------------- */
+
+    /* -------------------------- RESUME PAGE START -------------------- */
+    .resume-experience-part {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .edu-exp-heading {
+        margin: 8px auto 0px auto;
+    }
+
+    .resume-education-part {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skill-width {
+        width: 100%;
+        margin: 30px auto 0px auto;
+    }
+
+    .skills-language-logo {
+        margin-bottom: 35px;
+        height: auto;
+    }
+
+    .skills-language-logo>img {
+        width: 35%;
+    }
+
+    /* -------------------------- RESUME PAGE END -------------------- */
+
+
+    /* -------------------------- CONTACT PAGE START -------------------- */
+    .contact-Info-num-email {
+        padding: 40px 0px 10px 0px;
+    }
+
+    .contactFormMain {
+        margin-top: 40px;
+    }
+
+    /* -------------------------- CONTACT PAGE END -------------------- */
+}
+
+@media(max-width: 575px) {
+    .skills-language-logo>img {
+        width: 20%;
+    }
+}
+
+@media(max-width: 505px) {
+    .intro-details-body {
+        height: 470px;
+    }
+
+    .all-projects-mob {
+        border-radius: 0.5rem;
+    }
+
+    .project-img-mob>img {
+        border-radius: 0px;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    .project-card-mob {
+        border-radius: 0px;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+}
+
+@media(max-width: 425px) {
+
+    /* --------------------------------- HOME PAGE START ------------------ */
+    .profile-details>h2 {
+        font-size: 1.55rem;
+    }
+
+    .profile-details>p {
+        font-size: 14px;
+    }
+
+    .red-point,
+    .orange-point,
+    .green-point {
+        height: 10px;
+        width: 10px;
+    }
+
+    .topBar-text>p {
+        font-size: 12px;
+    }
+
+    .intro-block-text {
+        font-size: 0.8rem;
+    }
+
+    .intro-block>p {
+        font-size: 0.8rem;
+    }
+
+    /* --------------------------------- HOME PAGE END ------------------ */
+
+    /* --------------------------------- PROJECT PAGE START ------------------ */
+    .my-project-heading>h1,
+    .repo-main>h1,
+    .resume-page-heading>h1,
+    .resume-page-skills-heading>h1,
+    .contactUspage-heading>h1 {
+        font-size: 1.75rem;
+    }
+
+    .my-project-heading>h1::before,
+    .repo-main>h1::before,
+    .resume-page-skills-heading>h1::before,
+    .resume-page-skills-heading>h1::before,
+    .contactUspage-heading>h1::before {
+        height: 10px;
+    }
+
+    .project-card-mob {
+        padding: 10px 20px;
+    }
+
+    .resume-download-btn {
+        font-size: 0.8rem;
+    }
+
+    .ContactInfoMain {
+        padding: 40px 20px;
+    }
+
+    /* --------------------------------- PROJECT PAGE END ------------------ */
+    /* --------------------------------- PROJECT PAGE START ------------------ */
+}
+
+@media(max-width: 320px) {
+    .nav-logo>a {
+        font-size: 20px;
+    }
+
+    .css-1kvazvd {
+        position: absolute;
+        height: 22px;
+        bottom: 8px;
+        left: -4px;
+    }
+
+    .footer-social-icon {
+        width: 60%;
+    }
+
+    .projects-box {
+        padding: 12px 5px 12px 10px;
+    }
+
+    .projects-describtion>p {
+        font-size: 9px;
+    }
+
+    .repo-main>p,
+    .my-project-heading>p,
+    .resume-page-heading>p,
+    .css-1acgxpm,
+    .css-17dkj3,
+    .css-lizu7e,
+    .contactUspage-heading>p {
+        font-size: 12px;
+    }
+
+    .contact-Info-num-email {
+        padding: 20px 0px 10px 0px;
+    }
+
+    .num-email-location>a {
+        padding: 0px 10px;
+    }
+
+    .contact-Info-socailLink {
+        width: 85%;
+        padding: 0px;
+    }
+
+    .contactFormMain {
+        padding: 15px;
+    }
+}
+
+/* ///////////////////////// RESPONSIVENESS END ////////////////////// */
